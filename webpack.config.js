@@ -1,13 +1,14 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-    entry: "./entry.js",
-    output: {
-        path: __dirname,
-        filename: "bundle.js"
-    },
-    module: {
-        loaders: [{
-            test: /\.css$/,
-            loader: "style!css"
-        }]
-    }
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist")
+  },
+  plugins: [new HtmlWebpackPlugin({
+    title: "learn webpack"
+  })]
 }

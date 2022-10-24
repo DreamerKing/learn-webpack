@@ -1,0 +1,19 @@
+{
+  "name": "learn-webpack",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "version": "1.0.0",
+  "repository": "git@github.com:DreamerKing/learn-webpack.git",
+  "private": true,
+  "author": "Dreamer King <dreamerking@live.cn>",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
