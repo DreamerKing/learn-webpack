@@ -1,12 +1,15 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import { resolve, dirname } from 'node:path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { fileURLToPath } from 'url'
 
-module.exports = {
+const __dirname = fileURLToPath(dirname(import.meta.url))
+
+export default {
   mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist")
+    path: resolve(__dirname, "dist")
   },
   plugins: [new HtmlWebpackPlugin({
     title: "learn webpack"
