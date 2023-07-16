@@ -1,7 +1,9 @@
 {
   "name": "learn-webpack",
+  "type": "module",
   "scripts": {
-    "dev": "webpack"
+    "dev": "webpack serve --config ./webpack.config.js",
+    "start": "webpack"
   },
   "version": "1.0.0",
   "repository": "git@github.com:DreamerKing/learn-webpack.git",
@@ -9,11 +11,29 @@
   "author": "Dreamer King <dreamerking@live.cn>",
   "license": "MIT",
   "devDependencies": {
-    "html-webpack-plugin": "^5.5.0",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "@types/node": "^18.16.19",
+    "@types/webpack": "^5.28.1",
+    "astroturf": "^1.2.0",
+    "babel-loader": "^8.3.0",
+    "css-loader": "^6.8.1",
+    "csv-loader": "^3.0.5",
+    "html-webpack-plugin": "^5.5.3",
+    "json5": "^2.2.3",
+    "lodash-webpack-plugin": "^0.11.6",
+    "postcss-loader": "^7.3.3",
+    "postcss-nested": "^6.0.1",
+    "style-loader": "^3.3.3",
+    "toml": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.15.1",
+    "xml-loader": "^1.2.1",
+    "yamljs": "^0.3.0"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "terser-webpack-plugin": "^5.3.9"
   }
 }

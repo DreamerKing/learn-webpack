@@ -1,8 +1,34 @@
 # webpack
 
-静态模块打包器 递归构建依赖关系图 文件间的依赖
+## 优势
 
-基础概念
+- 支持多种模块标准
+- 有完备的代码分割方案
+- 可以处理各种类型的资源
+- 拥有庞大的社区支持
+
+静态模块打包器 递归构建依赖关系图 文件间的依赖
+动态打包所有依赖 显式依赖
+
+webpack 最出色的功能之一就是，除了引入 JavaScript，还可以通过 loader 或内置的 Asset Modules 引入任何其他类型的文件。
+
+## 核心概念
+
+1. 入口
+2. 出口
+3. 加载器
+4. 插件
+5. 环境
+
+loader的作用
+webpack 只能理解 JavaScript 和 JSON 文件。loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效的模块，以供应用程序使用，以及被添加到依赖图中。
+
+webpack可以通过 import 导入任何类型的模块，可以创建出更准确的依赖关系图。
+
+插件的作用
+用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。
+
+资源集中放置的方式会让所有资源紧密耦合起来，还是分散放在需要的地方更具备可移植性。
 
 - entry
 - output
@@ -20,7 +46,7 @@
 manifest
 
 - Runtime 在浏览器运行时，webpack 用来连接模块化的应用程序的所有代码。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。
-- Manifest 当编译器(compiler)开始执行、解析和映射应用程序时，它会保留所有模块的详细要点。当完成打包并发送到浏览器时，会在运行时通过 Manifest 来解析和加载模块。无论你选择哪种模块语法，那些 import 或 require 语句现在都已经转换为 `__webpack_require__ `方法，此方法指向模块标识符(module identifier)。通过使用 manifest 中的数据，runtime 将能够查询模块标识符，检索出背后对应的模块。
+- Manifest 当编译器(compiler)开始执行、解析和映射应用程序时，它会保留所有模块的详细要点。当完成打包并发送到浏览器时，会在运行时通过 Manifest 来解析和加载模块。无论你选择哪种模块语法，那些 import 或 require 语句现在都已经转换为 `__webpack_require__`方法，此方法指向模块标识符(module identifier)。通过使用 manifest 中的数据，runtime 将能够查询模块标识符，检索出背后对应的模块。
 
 构建目标(target)
 模块热替换(MHR)
@@ -28,14 +54,26 @@ manifest
 实操
 
 ```bash
-yarn add webpack webpack-cli -D
+pnpm add webpack webpack-cli webpack-dev-server -D
 ```
 
 常用 loader
 
 - file-loader
 - url-loader
+- babel-loader
+- style-loader/less-loader/sass-loader/stylus-loader
+- thread-loader
 
 常用 plugin
 
 - HtmlWebpackPlugin
+- purgecss-webpack-plugin 删除无用的 css
+- clean-webpack-plugin
+- copy-webpack-plugin
+- mini-css-extract-plugin
+- react-refresh-webpack-plugin
+- purifycss(弃用)
+- uncss
+
+PostCss
